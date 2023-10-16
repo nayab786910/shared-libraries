@@ -1,3 +1,6 @@
-def call() {
- sh "checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'git-hub', url: 'https://github.com/nayab786910/shared-libraries.git']])"
+def call(String repoUrl, String branch){
+   def workingDir = "${env.WORKSPACE}"
+   sh "git clone ${repoUrl} ${workingDir}"
+   sh "git checkout ${branch}"
+   return workingDir
 }
