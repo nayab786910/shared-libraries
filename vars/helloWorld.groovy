@@ -1,3 +1,3 @@
-def call(Branch_name,git_repo){
-   git branch: '${Branch_name}', credentialsId: 'git-hub', url: '${git_repo}'
+def call(Branch,git_repo){
+   git branch: '${Branch}', credentialsId: 'git-hub', url: '${git_repo}'
 }
